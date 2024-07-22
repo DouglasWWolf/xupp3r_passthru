@@ -22,20 +22,20 @@ preplace port port-id_qsfp_ctl_en -pg 1 -lvl 4 -x 760 -y 60 -defaultsOSRD
 preplace portBus led_l -pg 1 -lvl 4 -x 760 -y 420 -defaultsOSRD
 preplace portBus qsfp_rst_l -pg 1 -lvl 4 -x 760 -y 80 -defaultsOSRD
 preplace portBus qsfp_lp -pg 1 -lvl 4 -x 760 -y 100 -defaultsOSRD
-preplace inst loopback -pg 1 -lvl 2 -x 380 -y 200 -swap {8 1 2 3 4 13 6 7 16 9 10 11 12 21 14 15 24 17 18 19 20 5 22 23 29 25 26 27 28 0 30 31 32 35 33 34 41 39 38 37 40 36} -defaultsOSRD -pinDir qsfp0_gt right -pinY qsfp0_gt 40R -pinDir qsfp0_clk right -pinY qsfp0_clk 60R -pinDir qsfp1_gt right -pinY qsfp1_gt 80R -pinDir qsfp1_clk right -pinY qsfp1_clk 100R -pinDir qsfp2_gt right -pinY qsfp2_gt 120R -pinDir qsfp2_clk right -pinY qsfp2_clk 20R -pinDir qsfp3_gt right -pinY qsfp3_gt 140R -pinDir qsfp3_clk right -pinY qsfp3_clk 0R -pinDir init_clk right -pinY init_clk 160R -pinDir sys_resetn left -pinY sys_resetn 40L -pinDir active_0 left -pinY active_0 0L -pinDir active_1 left -pinY active_1 20L -pinDir aligned0 right -pinY aligned0 280R -pinDir aligned1 right -pinY aligned1 260R -pinDir active_2 left -pinY active_2 60L -pinDir aligned2 right -pinY aligned2 240R -pinDir active_3 left -pinY active_3 80L -pinDir aligned3 right -pinY aligned3 220R
-preplace inst pcie -pg 1 -lvl 1 -x 140 -y 200 -swap {0 1 2 3 4 5 6 7 10 8 9 11 12} -defaultsOSRD -pinDir pcie_mgt left -pinY pcie_mgt 0L -pinDir pcie_refclk left -pinY pcie_refclk 20L -pinDir resetn_out right -pinY resetn_out 40R -pinDir active0 right -pinY active0 0R -pinDir active1 right -pinY active1 20R -pinDir active2 right -pinY active2 60R -pinDir active3 right -pinY active3 80R
+preplace inst crossover -pg 1 -lvl 2 -x 380 -y 200 -swap {8 1 2 3 4 13 6 7 16 9 10 11 12 21 14 15 24 17 18 19 20 5 22 23 29 25 26 27 28 0 30 31 32 34 33 39 38 37 36 35 40 41} -defaultsOSRD -pinDir qsfp0_gt right -pinY qsfp0_gt 40R -pinDir qsfp0_clk right -pinY qsfp0_clk 60R -pinDir qsfp1_gt right -pinY qsfp1_gt 80R -pinDir qsfp1_clk right -pinY qsfp1_clk 100R -pinDir qsfp2_gt right -pinY qsfp2_gt 120R -pinDir qsfp2_clk right -pinY qsfp2_clk 20R -pinDir qsfp3_gt right -pinY qsfp3_gt 140R -pinDir qsfp3_clk right -pinY qsfp3_clk 0R -pinDir init_clk right -pinY init_clk 160R -pinDir sys_resetn left -pinY sys_resetn 20L -pinDir active_0 left -pinY active_0 0L -pinDir aligned0 right -pinY aligned0 280R -pinDir aligned1 right -pinY aligned1 260R -pinDir active_2 left -pinY active_2 40L -pinDir aligned2 right -pinY aligned2 240R -pinDir aligned3 right -pinY aligned3 220R -pinDir active_1 left -pinY active_1 60L -pinDir active_3 left -pinY active_3 80L
+preplace inst pcie -pg 1 -lvl 1 -x 140 -y 200 -swap {0 1 2 3 4 5 6 7 9 8 11 10 12} -defaultsOSRD -pinDir pcie_mgt left -pinY pcie_mgt 0L -pinDir pcie_refclk left -pinY pcie_refclk 20L -pinDir resetn_out right -pinY resetn_out 20R -pinDir active0 right -pinY active0 0R -pinDir active1 right -pinY active1 60R -pinDir active2 right -pinY active2 40R -pinDir active3 right -pinY active3 80R
 preplace inst status_leds -pg 1 -lvl 3 -x 620 -y 420 -swap {3 2 1 0 4} -defaultsOSRD -pinDir qsfp0_up left -pinY qsfp0_up 60L -pinDir qsfp1_up left -pinY qsfp1_up 40L -pinDir qsfp2_up left -pinY qsfp2_up 20L -pinDir qsfp3_up left -pinY qsfp3_up 0L -pinBusDir led_l right -pinBusY led_l 0R
 preplace inst qsfp_pins -pg 1 -lvl 2 -x 380 -y 60 -swap {1 2 0} -defaultsOSRD -pinBusDir qsfp_rst_l right -pinBusY qsfp_rst_l 20R -pinBusDir qsfp_lp right -pinBusY qsfp_lp 40R -pinDir qsfp_ctl_en right -pinY qsfp_ctl_en 0R
+preplace netloc active1_1 1 1 1 NJ 260
+preplace netloc active3_1 1 1 1 NJ 280
 preplace netloc init_clk_0_1 1 2 2 NJ 360 N
 preplace netloc loopback_active_0 1 1 1 N 200
-preplace netloc loopback_active_1 1 1 1 N 220
-preplace netloc loopback_active_2 1 1 1 NJ 260
-preplace netloc loopback_active_3 1 1 1 NJ 280
+preplace netloc loopback_active_2 1 1 1 NJ 240
 preplace netloc loopback_aligned 1 2 1 N 480
 preplace netloc loopback_aligned1 1 2 1 N 460
 preplace netloc loopback_aligned2 1 2 1 N 440
 preplace netloc loopback_aligned3 1 2 1 N 420
-preplace netloc pcie_resetn_out 1 1 1 N 240
+preplace netloc pcie_resetn_out 1 1 1 N 220
 preplace netloc qsfp_pins_qsfp_ctl_en 1 2 2 N 60 N
 preplace netloc qsfp_pins_qsfp_lp 1 2 2 NJ 100 N
 preplace netloc qsfp_pins_qsfp_rst_l 1 2 2 NJ 80 N
